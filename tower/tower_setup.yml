@@ -49,6 +49,19 @@
       run_once: true
       delegate_to: localhost
 
+    - name: ADD REPO INTO TOWER
+      tower_project:
+        name: "Phils Example Networking Demos"
+        organization: "Default"
+        scm_type: git
+        scm_url: "https://github.com/ffirg/ansible-networking"
+        tower_username: admin
+        tower_password: ansible
+        tower_host: https://localhost
+        tower_verify_ssl: no
+      run_once: true
+      delegate_to: localhost
+
     - name: ADD CREDENTIAL INTO TOWER
       tower_credential:
         name: Workshop Credential
@@ -83,3 +96,5 @@
           ansible_connection: network_cli
           ansible_become: yes
           #ansible_become_method: enable
+
+
