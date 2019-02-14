@@ -1,5 +1,5 @@
 # ignore some stuff 
-# tower_setup.yml
+tower_setup.yml
 *fact*
 *key*
 *.retry
