@@ -1,0 +1,14 @@
+---
+- name: CHANGE USER CREDENTIALS
+  hosts: cisco
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: CHANGE USERS PASSWORD
+      ios_user:
+        name: admin 
+        configured_password: "{{ new_password }}"
+        update_password: always
+        state: present
+
