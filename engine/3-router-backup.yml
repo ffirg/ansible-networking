@@ -13,10 +13,11 @@
         backup: yes
       register: config_output
 
-    - name: Create backups directory
+    - name: CREATE BACKUPS DIRECTORY
       file:
         path: "{{backupdir}}"
         state: directory
+      delegate_to: localhost
 
     - name: RENAME BACKUP
       copy:
